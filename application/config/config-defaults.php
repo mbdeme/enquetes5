@@ -66,7 +66,7 @@ $config['printanswershonorsconditions'] = 1; // If set to 1, only relevant answe
 // Only applicable, of course, if you have chosen 'R' for $dropdowns and/or $lwcdropdowns
 $config['repeatheadings']            = '25'; // The number of answers to show before repeating the headings in array (flexible) questions. Set to 0 to turn this feature off
 $config['minrepeatheadings']         = 3; // The minimum number of remaining answers that are required before repeating the headings in array (flexible) questions.
-$config['defaultlang']               = 'en'; // The default language to use - the available languages are the directory names in the /locale dir - for example de = German
+$config['defaultlang']               = 'fr'; // The default language to use - the available languages are the directory names in the /locale dir - for example de = German
 $config['timeadjust']                = 0; // Number of hours to adjust between your webserver local time and your own local time (for datestamping responses)
 $config['allowexportalldb']          = 0; // 0 will only export prefixed tables when doing a database dump. If set to 1 ALL tables in the database will be exported
 $config['maxdumpdbrecords']          = 500; // The maximum number of records that would be ouputted in a go during a database backup. Reduce this number if you're getting errors while backing up the entire database.
@@ -181,7 +181,7 @@ $config['default_displayed_auth_method'] = 'Authdb';
 //
 // The user still needs to be defined in the limesurvey database in order to
 // login and get his permissions (unless auth_webserver_autocreate_user is set to true)
-$config['auth_webserver'] = false;
+$config['auth_webserver'] = true;
 
 // auth_webserver_user_map
 // Enable username mapping
@@ -196,7 +196,7 @@ $config['auth_webserver_user_map'] = array();
 // Enable this if you want to automatically create users authenticated by the
 // webserver in LS
 // Default is false (commenting this options also means false)
-$config['auth_webserver_autocreate_user'] = false;
+$config['auth_webserver_autocreate_user'] = true;
 
 // auth_webserver_autocreate_profile
 // This is an array describing the default profile to use for auto-created users
@@ -204,9 +204,9 @@ $config['auth_webserver_autocreate_user'] = false;
 // 'hook_get_auth_webserver_profile' function).
 //
 $config['auth_webserver_autocreate_profile'] = Array(
-    'full_name' => 'autouser',
-    'email' => 'autouser@test.test',
-    'lang' => 'en',
+    'full_name' => $_SERVER["displayName"],
+    'email' => $_SERVER["mail"],
+    'lang' => 'fr',
     'htmleditormode' => $config['defaulthtmleditormode']
 );
 
