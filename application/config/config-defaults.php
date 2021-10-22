@@ -211,8 +211,8 @@ $config['auth_webserver_autocreate_profile'] = Array(
 );
 
 $config['auth_webserver_autocreate_permissions'] = Array(
-    'surveys' => array('create'=>true, 'read'=>true, 'update'=>true, 'delete'=>true)
-);
+	'surveys' => array('create'=>true, 'read'=>false, 'update'=>false, 'delete'=>false),
+        'labelsets' => array('create'=>true, 'read'=>true, 'update'=>false, 'delete'=>false, 'import'=>true, 'export'=>true));
 
 // hook_get_auth_webserver_profile
 // The optionnal 'hook_get_auth_webserver_profile' function is for advanced user usage only.
